@@ -1,0 +1,195 @@
+<form novalidate #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="BANKCODE" [value]="service.formData.bankcode" />
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label>bankcode</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="bankcode"
+        name="bankcode"
+        #bankcode="ngModel"
+        required
+        [class.invalid]="bankcode.invalid && bankcode.touched"
+        [(ngModel)]="service.formData.bankcode"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>bankname</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="bankname"
+        name="bankname"
+        #bankname="ngModel"
+        required
+        [class.invalid]="bankname.invalid && bankname.touched"
+        [(ngModel)]="service.formData.bankname"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label>bankaccount</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="bankaccount"
+        name="bankaccount"
+        #bankaccount="ngModel"
+        required
+        [class.invalid]="bankaccount.invalid && bankaccount.touched"
+        [(ngModel)]="service.formData.bankaccount"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>transactionfee</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="transactionfee"
+        name="transactionfee"
+        #transactionfee="ngModel"
+        required
+        [class.invalid]="transactionfee.invalid && transactionfee.touched"
+        [(ngModel)]="service.formData.transactionfee"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label>vouchertypecode</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="vouchertypecode"
+        name="vouchertypecode"
+        #vouchertypecode="ngModel"
+        required
+        [class.invalid]="vouchertypecode.invalid && vouchertypecode.touched"
+        [(ngModel)]="service.formData.vouchertypecode"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>servicecode</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="servicecode"
+        name="servicecode"
+        #servicecode="ngModel"
+        required
+        [class.invalid]="servicecode.invalid && servicecode.touched"
+        [(ngModel)]="service.formData.servicecode"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label>bankfeeid</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="bankfeeid"
+        name="bankfeeid"
+        #bankfeeid="ngModel"
+        required
+        [class.invalid]="bankfeeid.invalid && bankfeeid.touched"
+        [(ngModel)]="service.formData.bankfeeid"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>banknameabb</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="banknameabb"
+        name="banknameabb"
+        #banknameabb="ngModel"
+        required
+        [class.invalid]="banknameabb.invalid && banknameabb.touched"
+        [(ngModel)]="service.formData.banknameabb"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label>banknameabbeng</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="banknameabbeng"
+        name="banknameabbeng"
+        #banknameabbeng="ngModel"
+        required
+        [class.invalid]="banknameabbeng.invalid && banknameabbeng.touched"
+        [(ngModel)]="service.formData.banknameabbeng"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>bankdescription</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="bankdescription"
+        name="bankdescription"
+        #bankdescription="ngModel"
+        required
+        [class.invalid]="bankdescription.invalid && bankdescription.touched"
+        [(ngModel)]="service.formData.bankdescription"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label>bankdescriptioneng</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="bankdescriptioneng"
+        name="bankdescriptioneng"
+        #bankdescriptioneng="ngModel"
+        required
+        [class.invalid]="
+          bankdescriptioneng.invalid && bankdescriptioneng.touched
+        "
+        [(ngModel)]="service.formData.bankdescriptioneng"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>bankfiletype</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="bankfiletype"
+        name="bankfiletype"
+        #bankfiletype="ngModel"
+        required
+        [class.invalid]="bankfiletype.invalid && bankfiletype.touched"
+        [(ngModel)]="service.formData.bankfiletype"
+      />
+    </div>
+  </div>
+  <div class="row">
+    <div class="form-group col-md-6">
+      <label>bankfilecode</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="bankfilecode"
+        name="bankfilecode"
+        #bankfilecode="ngModel"
+        required
+        [class.invalid]="bankfilecode.invalid && bankfilecode.touched"
+        [(ngModel)]="service.formData.bankfilecode"
+      />
+    </div>
+    <div class="form-group col-md-6">
+      <label>orderno</label>
+      <input
+        class="form-control form-control-lg"
+        placeholder="orderno"
+        name="orderno"
+        #orderno="ngModel"
+        required
+        [class.invalid]="orderno.invalid && orderno.touched"
+        [(ngModel)]="service.formData.orderno"
+      />
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-info btn-lg btn-block" (click)="onSubmit(form)">
+      Insert
+    </button>
+    <button class="btn btn-info btn-lg btn-block" (click)="onUpdate(form)">
+      Update
+    </button>
+  </div>
+</form>
