@@ -12,7 +12,6 @@ import { ToastrModule } from 'ngx-toastr';
 import { BankComponent } from './bank/bank.component';
 import { BankFormComponent } from './bank/bank-form/bank-form.component';
 import { FullnameComponent } from './fullname/fullname.component';
-import { FullnameFormComponent } from './fullname/fullname-form/fullname-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +20,6 @@ import { FullnameFormComponent } from './fullname/fullname-form/fullname-form.co
     BankComponent,
     BankFormComponent,
     FullnameComponent,
-    FullnameFormComponent,
     
 
   ],

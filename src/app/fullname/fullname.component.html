@@ -1,31 +1,31 @@
-<div class="jumbtron py-3">
-    <h1 class="display-4 text-center">FullName Register</h1>
+<!-- <p>{{ userId }}</p>
+<p>{{ displayName }}</p> -->
+<h1>Connect Line with WebApp</h1>
+<hr />
+<form novalidate #form="ngForm" (submit)="onSubmit(form)">
+  <input type="hidden" name="userId" [value]="userId" />
+  <div class="form-group">
+    <label>Username</label>
+    <input
+      class="form-control form-control-lg"
+      placeholder="Username"
+      name="username"
+      required
+      [(ngModel)]="this.service.formData.username"
+    />
   </div>
-  
-  <div class="row">
-    <div class="col-md-6">
-      <app-fullname-form></app-fullname-form>
-    </div>
-    <div class="col-md-6">
-      <table class="table">
-        <thead class="thead-light">
-          <tr>
-            <th>Id</th>
-            <th>Name</th>
-           
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let pd of service.list" >
-            <td (click)="populateForm(pd)">{{pd.id}}</td>
-            <td (click)="populateForm(pd)">{{pd.name}}</td>
-            <td>
-              <i class="far fa-trash-alt fa-lg text-danger" (click)="onDelete(pd.id)">
-              </i>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="form-group">
+    <label>Password</label>
+    <input
+      class="form-control form-control-lg"
+      placeholder="Password"
+      name="password"
+      required
+      [(ngModel)]="this.service.formData.password"
+    />
   </div>
-  
+  <br />
+  <div class="form-group">
+    <button class="btn btn-info btn-lg btn-block" type="submit">Submit</button>
+  </div>
+</form>

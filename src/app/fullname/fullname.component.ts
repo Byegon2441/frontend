@@ -1,36 +1,43 @@
 import { Component, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
-import { FullName } from '../shared/fullname.model';
+import { NgForm } from '@angular/forms';
+import liff from '@line/liff';
 import { FullnameService } from '../shared/fullname.service';
-
 @Component({
   selector: 'app-fullname',
   templateUrl: './fullname.component.html',
   styleUrls: ['./fullname.component.css'],
 })
 export class FullnameComponent implements OnInit {
-  constructor(
-    public service: FullnameService,
-    private toastr: ToastrService
-  ) {}
 
-  ngOnInit(): void {
-    this.service.refreshList();
+      // pictureUrl:string
+      userId:string
+      displayName:string
+     
+      // statusMessage:string
+  constructor(public service: FullnameService,) {
+    liff.init({ liffId: '1656702962-jwyWx4xW' }, () => {
+      if (liff.isLoggedIn()) {
+        this.runApp()
+
+      } else {
+        liff.login();
+      }
+    });
   }
-  populateForm(selectedRecord: FullName) {
-    this.service.formData = Object.assign({}, selectedRecord);
+
+    runApp() {
+    liff.getProfile().then(profile => {
+    //  this.pictureUrl = profile.pictureUrl;
+      this.userId =   profile.userId;
+      this.displayName = profile.displayName;
+      // this.statusMessage = profile.statusMessage;
+    }).catch(err => console.error(err));
   }
-  onDelete(id: number) {
-    if (confirm('Are you sure to delete this record?')) {
-      this.service.deletePaymentDetail(id).subscribe(
-        (res) => {
-          this.service.refreshList(),
-            this.toastr.error('Delete successfully', 'Payment Detail Register');
-        },
-        (err) => {
-          console.log(err);
-        }
-      );
-    }
+
+  onSubmit(form: NgForm){
+    this.service.formData.userId = this.userId
+    this.service.postPaymentDetail();
   }
+
+  ngOnInit(): void {}
 }
