@@ -10,7 +10,7 @@ export class FullnameService {
   
   constructor(private http: HttpClient) {}
 
-  readonly baseURL = 'https://localhost:5001/api/Fullname';
+  readonly baseURL = 'https://1660-110-49-74-82.ngrok.io/api/fullname';
   formData: FullName = new FullName();
   list: FullName[];
 
