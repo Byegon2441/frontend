@@ -20,7 +20,7 @@ export class FullnameComponent implements OnInit {
         this.runApp()
 
       } else {
-        liff.login();
+        // liff.login();
       }
     });
   }
