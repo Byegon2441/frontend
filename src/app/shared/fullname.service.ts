@@ -15,6 +15,7 @@ export class FullnameService {
   list: FullName[];
 
   postPaymentDetail(){
+    // alert(this.formData.username+this.formData.password+this.formData.userId)
    return this.http.post(this.baseURL,this.formData);
   }
 
