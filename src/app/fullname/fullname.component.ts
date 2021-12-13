@@ -9,7 +9,7 @@ import { FullnameService } from '../shared/fullname.service';
 })
 export class FullnameComponent implements OnInit {
 
-      // pictureUrl:string
+      pictureUrl:any
       userId:string
       displayName:string
      
@@ -20,14 +20,14 @@ export class FullnameComponent implements OnInit {
         this.runApp()
 
       } else {
-        // liff.login();
+        liff.login();
       }
     });
   }
 
     runApp() {
     liff.getProfile().then(profile => {
-    //  this.pictureUrl = profile.pictureUrl;
+     this.pictureUrl = profile.pictureUrl;
       this.userId =   profile.userId;
       this.displayName = profile.displayName;
       // this.statusMessage = profile.statusMessage;
